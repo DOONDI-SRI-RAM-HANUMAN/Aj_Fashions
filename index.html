@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="AJ FASHIONS — Premium men's fashion store in Vijayawada. Shirts, jeans, casual wear and trend collections at affordable prices." />
+<meta name="theme-color" content="#000000" />
+<meta property="og:title" content="AJ FASHIONS — Premium Men's Fashion" />
+<meta property="og:description" content="Premium Men's Fashion | Shirts | Jeans | Casual Wear | Trend Collection" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<title>AJ FASHIONS — Premium Men's Fashion | Vijayawada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico">
+<style>
+  :root{
+    --black:#000000;
+    --white:#ffffff;
+    --gold:#D4AF37;
+    --gold-soft:#e6c766;
+    --gold-deep:#b8891c;
+    --bg:#f6f5f2;
+    --grey:#8a8a8a;
+    --line:rgba(0,0,0,0.08);
+    --shadow-sm:0 4px 12px rgba(0,0,0,0.06);
+    --shadow-md:0 20px 60px rgba(0,0,0,0.1);
+    --shadow-gold:0 10px 40px rgba(212,175,55,0.25);
+    --grad-gold:linear-gradient(135deg,#e6c766 0%,#D4AF37 45%,#b8891c 100%);
+    --grad-dark:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--black);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:#fff}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:-0.01em;line-height:1.1}
+  .container{max-width:1280px;margin:0 auto;padding:0 32px}
+  .eyebrow{display:inline-block;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:20px}
+  .section{padding:120px 0;position:relative}
+  .section-title{font-size:clamp(36px,5vw,64px);margin-bottom:24px}
+  .section-sub{color:var(--grey);font-size:17px;max-width:640px;line-height:1.7}
+
+  /* Custom cursor */
+  .cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transition:transform .15s ease,width .3s ease,height .3s ease,background .3s ease,opacity .3s ease;mix-blend-mode:difference}
+  .cursor{width:32px;height:32px;border:1.5px solid var(--gold);transform:translate(-50%,-50%)}
+  .cursor-dot{width:6px;height:6px;background:var(--gold);transform:translate(-50%,-50%)}
+  .cursor.grow{width:70px;height:70px;background:rgba(212,175,55,.15);border-color:transparent}
+  @media(max-width:900px){.cursor,.cursor-dot{display:none}}
+
+  /* Nav */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 0;transition:all .4s ease;backdrop-filter:blur(0);}
+  .nav.scrolled{background:rgba(255,255,255,.75);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);box-shadow:0 1px 0 rgba(0,0,0,.05);padding:14px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.15em}
+  .logo span{color:var(--gold-deep)}
+  .nav-links{display:flex;gap:40px;list-style:none}
+  .nav-links a{font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;position:relative;padding:6px 0;transition:color .3s}
+  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .4s ease}
+  .nav-links a:hover{color:var(--gold-deep)}
+  .nav-links a:hover::after{width:100%}
+  .burger{display:none;background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative}
+  .burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--black);transition:.3s}
+  .burger span:nth-child(1){top:4px}
+  .burger span:nth-child(2){top:50%;transform:translateY(-50%)}
+  .burger span:nth-child(3){bottom:4px}
+  .burger.open span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}
+  @media(max-width:900px){
+    .burger{display:block}
+    .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:280px;background:rgba(255,255,255,.95);backdrop-filter:blur(24px);flex-direction:column;justify-content:center;align-items:center;gap:32px;transition:right .4s ease;box-shadow:-20px 0 60px rgba(0,0,0,.1)}
+    .nav-links.open{right:0}
+  }
+
+  /* Hero */
+  .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a0a0a;color:#fff;text-align:center;padding:120px 24px 80px}
+  .hero-bg{position:absolute;inset:0;background:
+    radial-gradient(ellipse at 20% 30%,rgba(212,175,55,.18),transparent 55%),
+    radial-gradient(ellipse at 80% 70%,rgba(212,175,55,.12),transparent 60%),
+    linear-gradient(180deg,#050505 0%,#141414 100%);
+  }
+  .hero-bg::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='1' cy='1' r='.5' fill='rgba(255,255,255,0.04)'/></svg>");opacity:.5}
+  .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .particle{position:absolute;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold),0 0 20px rgba(212,175,55,.5);opacity:0;animation:float-up linear infinite}
+  @keyframes float-up{
+    0%{transform:translateY(100vh) scale(.3);opacity:0}
+    10%{opacity:.8}
+    90%{opacity:.6}
+    100%{transform:translateY(-10vh) scale(1);opacity:0}
+  }
+  .hero-content{position:relative;z-index:2;max-width:1000px}
+  .hero-eyebrow{color:var(--gold);font-size:12px;letter-spacing:.5em;text-transform:uppercase;margin-bottom:32px;opacity:0;animation:fadeUp 1s .2s forwards}
+  .hero h1{font-size:clamp(60px,12vw,180px);font-weight:400;letter-spacing:-.02em;line-height:.95;background:linear-gradient(180deg,#fff 0%,#fff 50%,rgba(255,255,255,.5) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:24px;opacity:0;animation:fadeUp 1.2s .4s forwards}
+  .hero h1 .amp{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+  .hero-sub{font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.7);max-width:640px;margin:0 auto 48px;letter-spacing:.05em;opacity:0;animation:fadeUp 1s .7s forwards}
+  .hero-sub .dot{color:var(--gold);margin:0 10px}
+  .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s .9s forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;font-weight:600;border-radius:100px;cursor:pointer;border:none;transition:all .4s cubic-bezier(.2,.9,.2,1);position:relative;overflow:hidden;font-family:inherit}
+  .btn svg{width:14px;height:14px;transition:transform .4s ease}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn-gold{background:var(--grad-gold);color:#111;box-shadow:var(--shadow-gold)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(212,175,55,.4)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.14);border-color:var(--gold);transform:translateY(-3px)}
+  .btn-dark{background:#111;color:#fff}
+  .btn-dark:hover{background:var(--gold-deep);transform:translateY(-3px)}
+  .btn-outline{background:transparent;color:#111;border:1.5px solid #111}
+  .btn-outline:hover{background:#111;color:#fff}
+  .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);pointer-events:none;transform:scale(0);animation:ripple .7s ease-out}
+  @keyframes ripple{to{transform:scale(4);opacity:0}}
+
+  .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.4em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:fadeUp 1s 1.3s forwards}
+  .scroll-hint::after{content:'';width:1px;height:50px;background:linear-gradient(180deg,var(--gold),transparent);animation:scrollBar 2s ease-in-out infinite}
+  @keyframes scrollBar{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}}
+
+  /* Reveal animations */
+  .reveal{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.2,.9,.2,1),transform 1s cubic-bezier(.2,.9,.2,1)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.2,1)}
+  .reveal-scale.in{opacity:1;transform:scale(1)}
+  .stagger>*{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.2,1)}
+  .stagger.in>*{opacity:1;transform:translateY(0)}
+  .stagger.in>*:nth-child(1){transition-delay:.05s}
+  .stagger.in>*:nth-child(2){transition-delay:.15s}
+  .stagger.in>*:nth-child(3){transition-delay:.25s}
+  .stagger.in>*:nth-child(4){transition-delay:.35s}
+  .stagger.in>*:nth-child(5){transition-delay:.45s}
+  .stagger.in>*:nth-child(6){transition-delay:.55s}
+
+  /* About */
+  .about{background:var(--white)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .about-visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--grad-dark);box-shadow:var(--shadow-md)}
+  .about-visual img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+  .about-visual:hover img{transform:scale(1.05)}
+  .about-badge{position:absolute;bottom:24px;left:24px;right:24px;padding:20px;background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.25);border-radius:16px;color:#fff;display:flex;align-items:center;gap:16px}
+  .about-badge .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1}
+  .about-badge .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+  .about-text p{color:#444;font-size:17px;line-height:1.85;margin-bottom:20px}
+  .divider-gold{width:60px;height:2px;background:var(--grad-gold);margin:32px 0}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
+
+  /* Features */
+  .features{background:var(--bg)}
+  .features-head{text-align:center;margin-bottom:80px}
+  .features-head p{margin:0 auto}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .f-card{background:#fff;padding:44px 36px;border-radius:24px;border:1px solid var(--line);position:relative;overflow:hidden;transition:all .5s cubic-bezier(.2,.9,.2,1)}
+  .f-card::before{content:'';position:absolute;inset:0;background:var(--grad-gold);opacity:0;transition:opacity .5s;z-index:0}
+  .f-card::after{content:'';position:absolute;inset:0;border-radius:24px;padding:1.5px;background:var(--grad-gold);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .5s}
+  .f-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:transparent}
+  .f-card:hover::after{opacity:1}
+  .f-card>*{position:relative;z-index:1}
+  .f-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(212,175,55,.05));color:var(--gold-deep);margin-bottom:24px;transition:all .5s}
+  .f-card:hover .f-icon{background:var(--grad-gold);color:#fff;transform:rotate(-8deg) scale(1.1)}
+  .f-icon svg{width:26px;height:26px}
+  .f-card h3{font-size:26px;margin-bottom:10px}
+  .f-card p{color:var(--grey);font-size:15px}
+  @media(max-width:900px){.feature-grid{grid-template-columns:1fr}}
+
+  /* Products */
+  .products{background:#fff}
+  .products-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px;flex-wrap:wrap}
+  .products-head h2{max-width:600px}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .prod{position:relative;border-radius:24px;overflow:hidden;background:#f0eee9;aspect-ratio:3/4;cursor:pointer;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+  .prod::after{content:'';position:absolute;inset:0;border-radius:24px;padding:2px;background:var(--grad-gold);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .5s;pointer-events:none;z-index:3}
+  .prod:hover{transform:translateY(-6px)}
+  .prod:hover::after{opacity:1}
+  .prod img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.9,.2,1)}
+  .prod:hover img{transform:scale(1.08)}
+  .prod-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff;z-index:2}
+  .prod-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .prod h3{font-size:28px;margin-bottom:6px;color:#fff}
+  .prod-desc{font-size:14px;opacity:.85;transform:translateY(10px);opacity:0;transition:all .5s .1s}
+  .prod:hover .prod-desc{transform:translateY(0);opacity:.85}
+  @media(max-width:900px){.prod-grid{grid-template-columns:1fr 1fr;gap:16px}.prod-overlay{padding:20px}}
+  @media(max-width:540px){.prod-grid{grid-template-columns:1fr}}
+
+  /* Offer banner */
+  .offer{padding:120px 24px;background:var(--grad-dark);color:#fff;position:relative;overflow:hidden;text-align:center}
+  .offer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,175,55,.15),transparent 60%)}
+  .offer::after{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.2),transparent 70%);animation:pulseGlow 4s ease-in-out infinite}
+  @keyframes pulseGlow{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.2);opacity:.8}}
+  .offer-inner{position:relative;z-index:2;max-width:800px;margin:0 auto}
+  .offer .eyebrow{color:var(--gold)}
+  .offer h2{font-size:clamp(36px,5vw,60px);margin-bottom:24px;color:#fff}
+  .offer h2 em{color:var(--gold);font-style:italic}
+  .offer p{font-size:18px;opacity:.85;margin-bottom:36px;line-height:1.7}
+
+  /* Reviews */
+  .reviews{background:var(--bg)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px}
+  .rev{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);border-radius:24px;padding:40px;position:relative;transition:all .5s;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+  .rev:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);background:#fff}
+  .stars{color:var(--gold);letter-spacing:4px;font-size:16px;margin-bottom:20px}
+  .rev-text{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.5;color:#111;margin-bottom:28px;font-weight:400}
+  .rev-author{display:flex;align-items:center;gap:14px}
+  .rev-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;color:#111;font-weight:600;font-size:15px}
+  .rev-name{font-weight:600;font-size:14px}
+  .rev-role{font-size:12px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase}
+  @media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
+
+  /* Store info */
+  .store{background:#fff}
+  .store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+  .info{padding:44px 36px;border-radius:24px;background:linear-gradient(180deg,#fafaf7 0%,#f2f0ea 100%);border:1px solid var(--line);transition:all .5s;position:relative;overflow:hidden}
+  .info:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .info-icon{width:52px;height:52px;border-radius:14px;background:var(--grad-gold);color:#111;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+  .info-icon svg{width:24px;height:24px}
+  .info h3{font-size:22px;margin-bottom:14px}
+  .info p{color:#333;font-size:15px;line-height:1.7}
+  .info a{color:#111;font-weight:500}
+  .info a:hover{color:var(--gold-deep)}
+  @media(max-width:900px){.store-grid{grid-template-columns:1fr}}
+
+  /* Map */
+  .map{background:var(--bg);padding-top:0}
+  .map-wrap{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line);height:480px;position:relative}
+  .map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+
+  /* Gallery */
+  .gallery{background:#fff}
+  .masonry{column-count:3;column-gap:20px;margin-top:64px}
+  .m-item{break-inside:avoid;margin-bottom:20px;border-radius:20px;overflow:hidden;position:relative;cursor:pointer}
+  .m-item img{width:100%;height:auto;transition:transform 1s cubic-bezier(.2,.9,.2,1)}
+  .m-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.4) 100%);opacity:0;transition:opacity .5s;backdrop-filter:blur(0)}
+  .m-item:hover::after{opacity:1;backdrop-filter:blur(2px)}
+  .m-item:hover img{transform:scale(1.1)}
+  .m-item .m-tag{position:absolute;bottom:20px;left:20px;color:#fff;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:all .5s;z-index:2}
+  .m-item:hover .m-tag{opacity:1;transform:translateY(0)}
+  @media(max-width:900px){.masonry{column-count:2}}
+  @media(max-width:540px){.masonry{column-count:1}}
+
+  /* Contact */
+  .contact{background:var(--bg);text-align:center}
+  .contact-inner{max-width:900px;margin:0 auto}
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+  .c-card{background:#fff;padding:44px 32px;border-radius:24px;border:1px solid var(--line);transition:all .5s;text-align:center;text-decoration:none;color:inherit}
+  .c-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+  .c-card .c-icon{width:64px;height:64px;border-radius:20px;background:var(--grad-gold);color:#111;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:transform .5s}
+  .c-card:hover .c-icon{transform:rotate(-8deg) scale(1.1)}
+  .c-card .c-icon svg{width:28px;height:28px}
+  .c-card h4{font-size:22px;margin-bottom:8px}
+  .c-card p{color:var(--grey);font-size:14px}
+  @media(max-width:900px){.contact-cards{grid-template-columns:1fr}}
+
+  /* Floating buttons */
+  .fab{position:fixed;right:24px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:80;transition:all .4s;animation:fabFloat 3s ease-in-out infinite}
+  .fab:hover{transform:translateY(-4px) scale(1.05)}
+  .fab svg{width:28px;height:28px}
+  .fab-wa{bottom:24px;background:#25D366;animation-delay:0s}
+  .fab-wa:hover{box-shadow:0 12px 30px rgba(37,211,102,.5)}
+  .fab-call{bottom:96px;background:var(--grad-gold);color:#111;animation-delay:.5s}
+  .fab-call:hover{box-shadow:0 12px 30px rgba(212,175,55,.5)}
+  .fab::before{content:'';position:absolute;inset:0;border-radius:50%;background:inherit;opacity:.6;animation:pulseRing 2s ease-out infinite;z-index:-1}
+  .fab-call::before{background:var(--gold)}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  @keyframes fabFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  .top-btn{position:fixed;bottom:168px;right:24px;width:48px;height:48px;border-radius:50%;background:#111;color:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);z-index:79;cursor:pointer;border:1px solid var(--gold);opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s}
+  .top-btn.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .top-btn:hover{background:var(--gold);color:#111;transform:translateY(-4px)}
+  .top-btn svg{width:18px;height:18px}
+
+  /* Footer */
+  footer{background:#050505;color:rgba(255,255,255,.65);padding:80px 0 32px;position:relative;overflow:hidden}
+  footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .f-brand h3{font-family:'Cormorant Garamond',serif;font-size:32px;color:#fff;letter-spacing:.1em;margin-bottom:8px}
+  .f-brand h3 span{color:var(--gold)}
+  .f-brand p{margin-bottom:12px;max-width:380px;font-size:15px}
+  .f-col h4{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px;font-family:'Inter',sans-serif;font-weight:600}
+  .f-col a,.f-col p{display:block;color:rgba(255,255,255,.65);font-size:14px;margin-bottom:12px;transition:color .3s}
+  .f-col a:hover{color:var(--gold)}
+  .f-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:12px}
+  .f-bottom .heart{color:#e94560}
+  @media(max-width:900px){.f-grid{grid-template-columns:1fr;gap:40px}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal,.reveal-scale,.stagger>*{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">AJ <span>FASHIONS</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#store">Visit</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. Vijayawada · Premium Menswear</div>
+    <h1>AJ <span class="amp">Fashions</span></h1>
+    <p class="hero-sub">Premium Men's Fashion <span class="dot">·</span> Shirts <span class="dot">·</span> Jeans <span class="dot">·</span> Casual Wear <span class="dot">·</span> Trend Collection</p>
+    <div class="hero-cta">
+      <a href="#collections" class="btn btn-gold">Explore Collection
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+919948418870" class="btn btn-ghost">Call Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- About -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal-scale">
+        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="AJ Fashions premium menswear" loading="lazy">
+        <div class="about-badge">
+          <div class="num">10<span style="font-size:22px">+</span></div>
+          <div class="lbl">Years of<br>Trusted Style</div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="section-title">Why <em style="color:var(--gold-deep);font-style:italic">AJ Fashions</em>?</h2>
+        <div class="divider-gold"></div>
+        <p>AJ FASHIONS is one of Vijayawada's trusted destinations for premium men's fashion. We bring stylish shirts, jeans, casual wear, and quality clothing that combines comfort with modern trends.</p>
+        <p>Whether you're shopping for daily wear or special occasions, we offer fashionable collections at affordable prices — designed for the man who values craft, cut, and character.</p>
+        <a href="#collections" class="btn btn-outline" style="margin-top:16px">View Collection
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section features">
+  <div class="container">
+    <div class="features-head reveal">
+      <span class="eyebrow">The AJ Difference</span>
+      <h2 class="section-title">Crafted for the modern man</h2>
+      <p class="section-sub" style="margin:0 auto">Six reasons discerning shoppers return, season after season.</p>
+    </div>
+    <div class="feature-grid stagger">
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.5 5.8 22l2.4-8.1L2 9.4h7.6z"/></svg></div>
+        <h3>Premium Shirts</h3><p>Hand-picked fabrics and cuts curated for effortless style.</p>
+      </div>
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h12l-1 8h2l-2 12H7L5 10h2z"/></svg></div>
+        <h3>Trendy Jeans</h3><p>Slim, straight and relaxed fits — engineered for comfort.</p>
+      </div>
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/></svg></div>
+        <h3>New Arrivals</h3><p>Fresh drops every month, on-trend and always in season.</p>
+      </div>
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Affordable Prices</h3><p>Designer aesthetics without designer price tags.</p>
+      </div>
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Friendly Service</h3><p>Personal attention and honest recommendations, always.</p>
+      </div>
+      <div class="f-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Stylish Collections</h3><p>Season-forward looks curated by fashion enthusiasts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section products" id="collections">
+  <div class="container">
+    <div class="products-head">
+      <div class="reveal">
+        <span class="eyebrow">The Collection</span>
+        <h2 class="section-title">Signature <em style="color:var(--gold-deep);font-style:italic">pieces</em>, curated with intent</h2>
+      </div>
+      <p class="section-sub reveal" style="align-self:flex-end">From tailored formals to relaxed weekend essentials — every piece is chosen to elevate your everyday.</p>
+    </div>
+    <div class="prod-grid stagger">
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80" alt="Premium Shirts"><div class="prod-overlay"><span class="prod-tag">Signature</span><h3>Premium Shirts</h3><p class="prod-desc">Refined weaves, tailored silhouettes.</p></div></a>
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=700&q=80" alt="Casual Shirts"><div class="prod-overlay"><span class="prod-tag">Weekend</span><h3>Casual Shirts</h3><p class="prod-desc">Effortless prints and easy fits.</p></div></a>
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80" alt="Formal Shirts"><div class="prod-overlay"><span class="prod-tag">Boardroom</span><h3>Formal Shirts</h3><p class="prod-desc">Crisp cottons for the polished professional.</p></div></a>
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80" alt="Denim Jeans"><div class="prod-overlay"><span class="prod-tag">Denim</span><h3>Denim Jeans</h3><p class="prod-desc">Heavyweight indigo, built to last.</p></div></a>
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80" alt="Slim Fit Jeans"><div class="prod-overlay"><span class="prod-tag">Slim Fit</span><h3>Slim Fit Jeans</h3><p class="prod-desc">Contemporary cuts with a modern edge.</p></div></a>
+      <a class="prod"><img loading="lazy" src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=700&q=80" alt="New Collections"><div class="prod-overlay"><span class="prod-tag">Just In</span><h3>New Collections</h3><p class="prod-desc">Fresh drops, styled and ready.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Offer -->
+<section class="offer">
+  <div class="offer-inner reveal">
+    <span class="eyebrow">Members Only</span>
+    <h2>A little <em>something</em> for our followers</h2>
+    <p>Follow us on social media and mention you're our follower to receive special offers on selected branded shirts. Exclusivity, the way it should be — quiet, generous, unforgettable.</p>
+    <a href="https://wa.me/919948418870" class="btn btn-gold">Claim Your Offer
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section reviews">
+  <div class="container">
+    <div class="features-head reveal" style="text-align:center">
+      <span class="eyebrow">Praise</span>
+      <h2 class="section-title">Loved by our customers</h2>
+    </div>
+    <div class="rev-grid stagger">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"Excellent collection. Every piece feels premium and thoughtfully curated."</p>
+        <div class="rev-author"><div class="rev-avatar">R</div><div><div class="rev-name">Rahul K.</div><div class="rev-role">Verified Buyer</div></div></div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"Best quality shirts I've bought in Vijayawada. Fit and finish are outstanding."</p>
+        <div class="rev-author"><div class="rev-avatar">A</div><div><div class="rev-name">Arjun M.</div><div class="rev-role">Verified Buyer</div></div></div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"Affordable pricing and friendly staff. Feels like shopping at a boutique."</p>
+        <div class="rev-author"><div class="rev-avatar">S</div><div><div class="rev-name">Sai P.</div><div class="rev-role">Verified Buyer</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Store -->
+<section class="section store" id="store">
+  <div class="container">
+    <div class="features-head reveal" style="text-align:center">
+      <span class="eyebrow">Visit Us</span>
+      <h2 class="section-title">Come experience it in person</h2>
+    </div>
+    <div class="store-grid stagger">
+      <div class="info">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Our Boutique</h3>
+        <p><strong>AJ FASHIONS</strong><br>Premium Men's Fashion Store</p>
+      </div>
+      <div class="info">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Address</h3>
+        <p>3rd Floor, Naya Datta Complex,<br>Beside Raj Yuvraj Theatre,<br>Gandhi Nagar, Vijayawada,<br>Andhra Pradesh – 520003</p>
+      </div>
+      <div class="info">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Hours & Contact</h3>
+        <p>Open Daily<br>10:00 AM – 10:00 PM<br><a href="tel:+919948418870">📞 09948418870</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="section map">
+  <div class="container">
+    <div class="map-wrap reveal-scale">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=Gandhi+Nagar,+Vijayawada,+Andhra+Pradesh+520003&output=embed" title="AJ Fashions location"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="features-head reveal" style="text-align:center">
+      <span class="eyebrow">Lookbook</span>
+      <h2 class="section-title">Inside the store</h2>
+    </div>
+    <div class="masonry">
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Formal</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Casual</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Denim</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Portrait</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Tee</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Street</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Editorial</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1608228088998-57828365d486?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Shirts</span></div>
+      <div class="m-item"><img loading="lazy" src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=700&q=80" alt=""><span class="m-tag">Denim</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="container contact-inner">
+    <div class="reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">Let's talk fashion</h2>
+      <p class="section-sub" style="margin:0 auto">Reach out — we'd love to help you find your next favorite piece.</p>
+    </div>
+    <div class="contact-cards stagger">
+      <a class="c-card" href="tel:+919948418870">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h4>Call Us</h4><p>09948418870</p>
+      </a>
+      <a class="c-card" href="https://www.google.com/maps?q=Gandhi+Nagar,+Vijayawada" target="_blank" rel="noopener">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Visit Us</h4><p>Gandhi Nagar, Vijayawada</p>
+      </a>
+      <a class="c-card" href="https://wa.me/919948418870?text=Hello%20AJ%20FASHIONS%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." target="_blank" rel="noopener">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.85 7.85 0 0012 4a7.94 7.94 0 00-6.75 12.13L4 21l4.98-1.3A7.93 7.93 0 0012 20a7.94 7.94 0 005.6-13.7zM12 18.5a6.5 6.5 0 01-3.32-.91l-.24-.14-2.96.78.79-2.88-.16-.25A6.51 6.51 0 1112 18.5zm3.56-4.87c-.19-.1-1.15-.57-1.33-.63s-.31-.1-.44.1-.5.63-.62.76-.23.14-.42.05a5.35 5.35 0 01-1.57-.97 5.9 5.9 0 01-1.09-1.35c-.11-.19 0-.29.09-.38s.19-.23.29-.34a1.3 1.3 0 00.19-.32.35.35 0 000-.34c0-.1-.44-1.06-.6-1.44s-.32-.32-.44-.33h-.38a.72.72 0 00-.52.24 2.2 2.2 0 00-.68 1.63 3.83 3.83 0 00.8 2.02 8.72 8.72 0 003.34 2.95c.47.2.83.32 1.12.41a2.7 2.7 0 001.23.08 2 2 0 001.32-.93 1.63 1.63 0 00.12-.93c-.05-.09-.17-.14-.36-.24z"/></svg></div>
+        <h4>WhatsApp</h4><p>Chat with us instantly</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <h3>AJ <span>FASHIONS</span></h3>
+        <p style="color:var(--gold);letter-spacing:.2em;font-size:11px;text-transform:uppercase;margin-bottom:20px">Premium Men's Fashion Store</p>
+        <p>Vijayawada's trusted destination for shirts, jeans, and elevated casual wear. Style, crafted with intent.</p>
+      </div>
+      <div class="f-col">
+        <h4>Visit</h4>
+        <p>3rd Floor, Naya Datta Complex,<br>Beside Raj Yuvraj Theatre,<br>Gandhi Nagar, Vijayawada – 520003</p>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a href="tel:+919948418870">📞 09948418870</a>
+        <a href="https://wa.me/919948418870">💬 WhatsApp</a>
+        <p style="color:rgba(255,255,255,.5)">Open Daily · 10 AM – 10 PM</p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div>© <span id="year"></span> AJ Fashions. All rights reserved.</div>
+      <div>Designed with <span class="heart">❤</span> for the modern gentleman</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating actions -->
+<a href="tel:+919948418870" class="fab fab-call" aria-label="Call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+<a href="https://wa.me/919948418870?text=Hello%20AJ%20FASHIONS%2C%0AI%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." class="fab fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.85 7.85 0 0012 4a7.94 7.94 0 00-6.75 12.13L4 21l4.98-1.3A7.93 7.93 0 0012 20a7.94 7.94 0 005.6-13.7zM12 18.5a6.5 6.5 0 01-3.32-.91l-.24-.14-2.96.78.79-2.88-.16-.25A6.51 6.51 0 1112 18.5zm3.56-4.87c-.19-.1-1.15-.57-1.33-.63s-.31-.1-.44.1-.5.63-.62.76-.23.14-.42.05a5.35 5.35 0 01-1.57-.97 5.9 5.9 0 01-1.09-1.35c-.11-.19 0-.29.09-.38s.19-.23.29-.34a1.3 1.3 0 00.19-.32.35.35 0 000-.34c0-.1-.44-1.06-.6-1.44s-.32-.32-.44-.33h-.38a.72.72 0 00-.52.24 2.2 2.2 0 00-.68 1.63 3.83 3.83 0 00.8 2.02 8.72 8.72 0 003.34 2.95c.47.2.83.32 1.12.41a2.7 2.7 0 001.23.08 2 2 0 001.32-.93 1.63 1.63 0 00.12-.93c-.05-.09-.17-.14-.36-.24z"/></svg>
+</a>
+<button class="top-btn" id="topBtn" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const topBtn = document.getElementById('topBtn');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    topBtn.classList.toggle('show', window.scrollY > 600);
+    // Parallax hero
+    const hero = document.querySelector('.hero-bg');
+    if (hero && window.scrollY < window.innerHeight) hero.style.transform = `translateY(${window.scrollY*0.3}px)`;
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    burger.classList.remove('open'); navLinks.classList.remove('open');
+  }));
+
+  // Top btn
+  topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Particles
+  const p = document.getElementById('particles');
+  for(let i=0;i<40;i++){
+    const el = document.createElement('span');
+    el.className = 'particle';
+    const s = Math.random()*4+1;
+    el.style.width = el.style.height = s+'px';
+    el.style.left = Math.random()*100+'%';
+    el.style.animationDuration = (Math.random()*15+10)+'s';
+    el.style.animationDelay = (Math.random()*15)+'s';
+    p.appendChild(el);
+  }
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal, .reveal-scale, .stagger').forEach(el=>io.observe(el));
+
+  // Ripple
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const r = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      const size = Math.max(r.width, r.height);
+      ripple.style.width = ripple.style.height = size+'px';
+      ripple.style.left = (e.clientX - r.left - size/2)+'px';
+      ripple.style.top = (e.clientY - r.top - size/2)+'px';
+      btn.appendChild(ripple);
+      setTimeout(()=>ripple.remove(), 700);
+    });
+  });
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const dot = document.getElementById('cursorDot');
+  let mx=0,my=0,cx=0,cy=0;
+  window.addEventListener('mousemove',(e)=>{
+    mx=e.clientX; my=e.clientY;
+    dot.style.left = mx+'px'; dot.style.top = my+'px';
+  });
+  const raf = ()=>{
+    cx += (mx-cx)*0.15; cy += (my-cy)*0.15;
+    cursor.style.left = cx+'px'; cursor.style.top = cy+'px';
+    requestAnimationFrame(raf);
+  };
+  raf();
+  document.querySelectorAll('a,button,.prod,.f-card,.c-card,.m-item,.rev').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cursor.classList.add('grow'));
+    el.addEventListener('mouseleave',()=>cursor.classList.remove('grow'));
+  });
+</script>
+</body>
+</html>
